@@ -690,3 +690,7 @@
 #47 /Users/lotaf/Sites/backend-whistlehub-2/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #48 {main}
 "} 
+[2024-06-11 09:35:57] local.ERROR: Maximum execution time of 30 seconds exceeded {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 30 seconds exceeded at /Users/lotaf/Sites/backend-whistlehub-2/vendor/laravel/framework/src/Illuminate/Collections/Arr.php:605)
+[stacktrace]
+#0 {main}
+"} 
