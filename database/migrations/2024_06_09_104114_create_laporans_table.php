@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('isi');
             $table->string('lokasi');
             $table->string('telp');
-            $table->string('lampiran');
+            $table->string('lampiran')->nullable();
             $table->string('bukti_selesai')->nullable();
             $table->string('review')->nullable();
             $table->boolean('status')->nullable();
