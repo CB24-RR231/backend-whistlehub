@@ -5,9 +5,9 @@ WhistleHub adalah sebuah aplikasi pelaporan gangguan untuk layanan perusahaan ai
 Capstone Project for Bootcamp Dicoding
 
 This project run with
+- PHP
 - Laravel 10
 - Laravel Filament
-- MySql
 
 How to run this project
 
