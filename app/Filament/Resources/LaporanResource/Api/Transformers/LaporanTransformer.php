@@ -4,6 +4,7 @@ namespace App\Filament\Resources\LaporanResource\Api\Transformers;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class LaporanTransformer extends JsonResource
@@ -18,13 +19,6 @@ class LaporanTransformer extends JsonResource
 
     public function toArray(Request $request)
     {
-        $image = 'testetstst';
-        if ($request->file('lampiran')) {
-            $fileName = $this->generateRandomString();
-            $extension = $request->file('lampiran')->extension();
-            $image = $filename.'.'.$extension;
-            Storage::putFileAs('image', $request->lampiran, $image);
-        }
         return [
             'id' => $this->id,
             'kategori_id' => $this->kategori_id,
@@ -33,7 +27,7 @@ class LaporanTransformer extends JsonResource
             'isi' => $this->isi,
             'lokasi' => $this->lokasi,
             'telp' => $this->telp,
-            'lampiran' => $image,
+            'lampiran' => $request->lampiran,
             'tanggal_kejadian' => $this->created_at
         ];
 

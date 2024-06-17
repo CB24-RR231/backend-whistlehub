@@ -24,20 +24,19 @@ class CreateHandler extends Handlers {
     {
         $model = new (static::getModel());
 
-        $model->fill($request->all());
-
-        $model->save();
-
-        return static::sendSuccessResponse($model, "Successfully Create Resource");
-    }
-
-    function generateRandomString($length = 40) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[random_int(0, $charactersLength - 1)];
+        $model->fill(
+            $request->all(),
+        );
+        if ($request->lampiran) {
+            $uploadFolder = 'lampiran';
+            $image = $request->lampiran;
+            $path = $image->store($uploadFolder, 'public');
+            $url = Storage::disk('public')->url($path);
+            $model->lampiran = $path;
         }
-        return $randomString;
+        $model->save();
+        return static::sendSuccessResponse($model, "success");
     }
+
+    
 }

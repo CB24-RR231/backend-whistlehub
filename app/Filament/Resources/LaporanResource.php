@@ -37,8 +37,6 @@ class LaporanResource extends Resource
     {
         return $form
             ->schema([
-                FileUpload::make('lampiran')
-                ->image(),
                 Textarea::make('review')
                 ->rows(10)
                 ->cols(20),

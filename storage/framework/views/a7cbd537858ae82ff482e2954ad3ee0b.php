@@ -83,7 +83,6 @@
                 'list-inside list-disc' => $isBulleted,
                 'gap-1.5' => $isBadge,
                 'flex-wrap' => $isBadge && (! $isListWithLineBreaks),
-                'whitespace-normal' => $canWrap,
                 match ($alignment) {
                     Alignment::Start => 'text-start',
                     Alignment::Center => 'text-center',
@@ -242,6 +241,7 @@
                                     class="<?php echo \Illuminate\Support\Arr::toCssClasses([
                                         'fi-ta-text-item-label',
                                         'group-hover/item:underline group-focus-visible/item:underline' => $url,
+                                        'whitespace-normal' => $canWrap,
                                         'line-clamp-[--line-clamp]' => $lineClamp,
                                         match ($size) {
                                             TextColumnSize::ExtraSmall, 'xs' => 'text-xs',
