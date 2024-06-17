@@ -11,6 +11,7 @@ class Laporan extends Model
 
     protected $fillable = [
         'kategori_id',
+        'laporan_id',
         'kepada',
         'judul',
         'isi',

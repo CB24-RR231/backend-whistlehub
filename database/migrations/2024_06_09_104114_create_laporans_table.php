@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('laporans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('kategori_id')->constrained('kategoris')->cascadeOnDelete();
+            $table->string('laporan_id');
             $table->string('kepada');
             $table->string('judul');
             $table->text('isi');

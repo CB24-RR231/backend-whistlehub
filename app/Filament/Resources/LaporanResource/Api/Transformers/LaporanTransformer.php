@@ -22,6 +22,7 @@ class LaporanTransformer extends JsonResource
         return [
             'id' => $this->id,
             'kategori_id' => $this->kategori_id,
+            'laporan_id' => $this->laporan_id,
             'kepada' => $this->kepada,
             'judul' => $this->judul,
             'isi' => $this->isi,
