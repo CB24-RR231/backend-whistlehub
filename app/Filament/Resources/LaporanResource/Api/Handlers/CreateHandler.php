@@ -23,7 +23,7 @@ class CreateHandler extends Handlers {
     public function handler(Request $request)
     {
         $model = new (static::getModel());
-
+        $random_number = random_int(100000, 999999);
         $model->fill(
             $request->all(),
         );
@@ -34,7 +34,7 @@ class CreateHandler extends Handlers {
             $url = Storage::disk('public')->url($path);
             $model->lampiran = $path;
         }
-        $model->laporan_id = random_int(100000, 999999);
+        $model->laporan_id = (int)$random_number;
         $model->save();
         return static::sendSuccessResponse($model, "success");
     }

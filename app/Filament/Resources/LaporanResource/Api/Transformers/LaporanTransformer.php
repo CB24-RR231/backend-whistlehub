@@ -22,13 +22,13 @@ class LaporanTransformer extends JsonResource
         return [
             'id' => $this->id,
             'kategori_id' => $this->kategori_id,
-            'laporan_id' => $this->laporan_id,
+            'laporan_id' => (int)$this->laporan_id,
             'kepada' => $this->kepada,
             'judul' => $this->judul,
             'isi' => $this->isi,
             'lokasi' => $this->lokasi,
             'telp' => $this->telp,
-            'lampiran' => $request->lampiran,
+            'lampiran' => $this->lampiran,
             'tanggal_kejadian' => $this->created_at
         ];
 
