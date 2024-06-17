@@ -29,6 +29,9 @@ class LaporanTransformer extends JsonResource
             'lokasi' => $this->lokasi,
             'telp' => $this->telp,
             'lampiran' => $this->lampiran,
+            'bukti_selesai' => $this->bukti_selesai,
+            'review' => $this->review,
+            'status' => $this->status,
             'tanggal_kejadian' => $this->created_at
         ];
 

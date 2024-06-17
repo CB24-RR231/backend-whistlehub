@@ -34,6 +34,7 @@ class CreateHandler extends Handlers {
             $url = Storage::disk('public')->url($path);
             $model->lampiran = $path;
         }
+        $model->status = 0;
         $model->laporan_id = (int)$random_number;
         $model->save();
         return static::sendSuccessResponse($model, "success");
