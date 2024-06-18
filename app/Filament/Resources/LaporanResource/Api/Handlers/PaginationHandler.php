@@ -22,8 +22,7 @@ class PaginationHandler extends Handlers {
         ->allowedSorts($model::$allowedSorts ?? [])
         ->allowedFilters($model::$allowedFilters ?? [])
         ->allowedIncludes($model::$allowedIncludes ?? null)
-        ->paginate(request()->query('per_page'))
-        ->appends(request()->query());
+        ->get();
 
         return static::getApiTransformer()::collection($query);
     }
